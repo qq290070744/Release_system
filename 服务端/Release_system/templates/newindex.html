@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+    <title>大象技术中心日常发布系统</title>
+
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" href="http://www.healthmall.cn/favicon.ico"/>
+    <!-- =========================
+     FAV AND TOUCH ICONS
+    ============================== -->
+
+
+    <!-- =========================
+         STYLESHEETS
+    ============================== -->
+    <link rel="stylesheet" href="https://www.firsttwo.com//www/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.firsttwo.com/www/css/owl.theme.css">
+    <link rel="stylesheet" href="https://www.firsttwo.com//www/css/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.firsttwo.com//www/css/jquery.vegas.min.css">
+    <link rel="stylesheet" href="https://www.firsttwo.com//www/css/animate.min.css">
+
+
+    <!-- CUSTOM STYLES -->
+    <link rel="stylesheet" href="https://www.firsttwo.com//www/css/styles.css">
+    <link rel="stylesheet" href="https://www.firsttwo.com//www/css/responsive.css">
+
+
+</head>
+
+<body id="page-home">
+
+
+<!-- =========================
+   HOME SECTION       
+============================== -->
+<header id="home" class="header" style="height: 700px;">
+
+    <!-- TOP BAR -->
+    <div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner" style="background-color: #1ba354">
+        <div class="container">
+            <div class="navbar-header responsive-logo">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                        data-target="#bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+
+                </button>
+                <div class="navbar-brand">
+                    <a href="/"><img src="http://121.201.68.21:9000/static/img/loggo.png" style="width: 195px"></a>
+                </div>
+            </div>
+            <nav class="navbar-collapse collapse" role="navigation" id="bs-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
+
+
+                    {% if request.user.is_authenticated %}
+                        <li><a id="navbar-nav-list-home" href="#">欢迎登陆</a></li>
+                        <li><a id="navbar-nav-list-testimonials" href="#l">用户名:{{ request.user }}</a></li>
+                        <li><a id="navbar-nav-list-pricing" href="#"> 姓名：{{ request.user.userpro.name }}</a></li>
+
+                    {% else %}
+                        <span style="color: red">登录/注册 /<a href="/accounts/logout">注销</a></span>
+                    {% endif %}
+                    <li><a id="navbar-nav-list-signup" style="padding: 0px 5px 0px 5px;" class="btn signup-button"
+                           href="/accounts/logout">注销</a></li>
+                    <li><a target="_blank" id="admin" href="admin" class="btn signup-button">后台管理</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- / END TOP BAR -->
+
+    <!-- BIG HEADING WITH CALL TO ACTION BUTTONS AND SHORT MESSAGES -->
+    <div class="container">
+
+        <!-- HEADING -->
+        <!-- <h1 class="intro">Situational Intelligence Now</h1> -->
+        <h1 class="intro">大象技术中心日常发布系统</h1>
+        <br>
+        <h3 class="subintro"></h3>
+        <br>
+        <br>
+        <h3 class="subintro"></h3>
+
+        <!-- CALL TO ACTION BUTTONS -->
+        <div class="buttons inpage-scroll">
+            <a target="_blank" id="button-action-signupfree" href="/file"
+               class="btn btn-primary custom-button blue-btn">代码文件上传到服务端</a>
+
+            <a target="_blank" href="/admin/app01/host_list/add/"
+               class="btn btn-primary custom-button green-btn">添加主机和主机组</a>
+
+            <a target="_blank" href="/admin/app01/service_type/add/"
+               class="btn btn-primary custom-button green-btn">添加服务类型</a>
+
+            <a target="_blank" id="button-action-signupfree"
+               href="/admin/app01/server_ip_and_port/1/change/"
+               class="btn btn-primary custom-button blue-btn">服务端IP地址和端口号修改</a><hr>
+
+            <a target="_blank" id="button-action-signupfree" href="/release_status"
+               class="btn btn-primary custom-button blue-btn">历史发布状态</a>
+
+            <a target="_blank" id="button-action-signupfree" href="/rollback_status"
+               class="btn btn-primary custom-button blue-btn">历史回滚状态</a>
+
+
+            <a target="_blank" href="/release" class="btn btn-primary custom-button red-btn">发布</a>
+
+            <a target="_blank" href="/rollback"
+               class="btn btn-primary custom-button green-btn">回滚</a>
+            <!--
+                        <a target="_blank" href="heat_chart" class="btn btn-primary custom-button red-btn">今日各省地理区域交易金额图</a>
+                        <a target="_blank" id="button-action-signupfree" href="Big_picture"
+                           class="btn btn-primary custom-button blue-btn">总的大图</a>-->
+        </div>
+    </div> <!-- / END BIG HEADING WITH CALL TO ACTION BUTTONS AND SHORT MESSAGES  -->
+
+</header> <!-- / END HOME SECTION  -->
+<embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf"
+       quality="high" bgcolor="#ffffff" width="640" height="280" name="honehoneclock" align="middle"
+       allowscriptaccess="always" type="application/x-shockwave-flash"
+       pluginspage="http://www.macromedia.com/go/getflashplayer">
+
+</body>
+</html>

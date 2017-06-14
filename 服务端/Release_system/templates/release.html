@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布界面</title>
+    <style type="text/css">
+        label {
+            display: block;
+            margin: 50px auto;
+        }
+
+        .da {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="da">
+    <form method="post" action="">
+        <h1>发布界面</h1>
+        <label class="host">要发布的主机：<select name="host">
+            <option selected="selected">未选择请选择</option>
+            {% for i in data2 %}
+                <option class="host_id">{{ i.hostname }}</option>
+            {% endfor %}
+        </select></label>
+        <label class="group">要发布的主机组：
+            <select name="host_group">
+                <option selected="selected">未选择请选择</option>
+                {% for i in data3 %}
+                    <option>{{ i }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>要发布的文件：<select name="file">
+            <option selected="selected">未选择请选择</option>
+            {% for i in data %}
+                <option>{{ i.headImg }}</option>
+            {% endfor %}
+        </select>
+        </label>
+        <label>服务类型:
+            <select name="service">
+                <option selected="selected">未选择请选择</option>
+                {% for i in data1 %}
+                    <option>{{ i.service_name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>要发布的路径：<input type="text" name="dir"></label>
+        <label>发布成功后要执行的命令：<textarea name="cmd"></textarea></label>
+        <input type="submit" value="提交">
+    </form>
+    {% if post_ok %}
+        <h1 style="color: red">{{ post_ok }}</h1>
+    {% endif %}
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".group").click(function () {
+            $(".host").hide();
+        });
+        $(".host").click(function () {
+            $(".group").hide();
+        });
+    })
+</script>
+</body>
+</html>

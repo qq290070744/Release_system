@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史发布状态</title>
+    <style type="text/css">
+        table {
+            margin: auto;
+
+        }
+
+        td, th {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center"><a target="_blank" href="/admin/app01/his_rel/">历史发布记录</a></h1>
+<table border="1" style="text-align: center;">
+    <tr>
+        <th>ID</th>
+        <th>主机</th>
+        <th>主机组</th>
+        <th>文件名</th>
+        <th>服务类型</th>
+        <th>发布状态</th>
+        <th>发布时间</th>
+        <th>删除</th>
+
+    </tr>
+    {% for i in data %}
+        <tr id="{{ i.id }}">
+            <td>{{ i.id }}</td>
+            <td>{{ i.host }}</td>
+            <td>{{ i.host_group }}</td>
+            <td>{{ i.filename }}</td>
+            <td>{{ i.service_type }}</td>
+            {% if i.status == 2 %}
+                <td>发布成功</td>
+            {% elif i.status == 0 %}
+                <td>发布失败</td>
+            {% else %}
+                <td>发布中</td>
+            {% endif %}
+            <td>{{ i.relea_time|safe }}</td>
+            <td>
+                <button>删除</button>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            var _id = $(this).parent().parent().attr("id");
+            //var select_ = $(this).parent().parent().find('select').find("option:selected").val();
+            // console.log(select_);
+            $("#" + _id).hide();
+            //alert(_id);
+            $.get("/release_status/", {'_id': _id}, function () {
+                alert('成功删除ID为' + _id + "的记录")
+            })
+        });
+
+    });
+</script>
+</body>
+</html>

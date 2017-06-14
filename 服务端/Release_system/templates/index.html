@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到首页</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <span>用户名:{{ request.user }}  </span><span style="color: #5cb85c">  </span>
+{% else %}
+    <span style="color: red">登录/注册 /<a href="/accounts/logout">注销</a></span>
+{% endif %}
+<span style="color: red"><a href="/accounts/logout" style="color: red">注销</a></span>
+<h1>欢迎来到首页</h1>
+<div>
+    <a target="_blank" href="file">文件上传</a>
+    <a target="_blank" href="release">文件发布</a>
+    <a target="_blank" href="/admin/app01/host_list/add/">添加主机</a>
+    <a target="_blank" href="/admin/app01/service_type/add/">添加服务类型</a>
+    <a target="_blank" href="/release_status">历史发布状态</a>
+
+</div>
+
+<embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf"
+       quality="high" bgcolor="#ffffff" width="640" height="280" name="honehoneclock" align="middle"
+       allowscriptaccess="always" type="application/x-shockwave-flash"
+       pluginspage="http://www.macromedia.com/go/getflashplayer">
+
+
+</body>
+</html>
