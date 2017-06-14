@@ -1,3 +1,6 @@
+服务端在3.5下跑
+客户端在2.7下跑
+
 部署客户端要执行的命令
 yum -y install epel-release
 yum -y install python-pip
