@@ -88,7 +88,7 @@ DATABASES= {
         'NAME': "Release_system",
         "USER":"jiang",
         "PASSWORD":'jiangwenhui',
-        "HOST":"121.201.68.21",
+        "HOST":"111.111.111.111",
         'PORT':3307,
     }
 }
