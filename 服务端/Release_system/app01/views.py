@@ -13,10 +13,10 @@ from multiprocessing import Process
 # mysql连接#
 from Release_system import settings
 
-host = settings.DATABASES['default']['HOST']  # '121.201.68.21'
-port = settings.DATABASES['default']['PORT']  # 3307
-user = settings.DATABASES['default']['USER']  # 'jiang'
-passwd = settings.DATABASES['default']['PASSWORD']  # 'jiangwenhui'
+host = settings.DATABASES['default']['HOST']  
+port = settings.DATABASES['default']['PORT']  
+user = settings.DATABASES['default']['USER']  
+passwd = settings.DATABASES['default']['PASSWORD']  
 db = settings.DATABASES['default']['NAME']  # 'daxiangzhanshi'
 
 
