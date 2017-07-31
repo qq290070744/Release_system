@@ -17,7 +17,7 @@ pip install django
 cd 客户端路径
 python manage.py runserver 0.0.0.0:9999
 
-![Alt text](1.png)
-![Alt text](2.png)
-![Alt text](3.png)
-![Alt text](4.png)
+![Alt text](http://121.201.68.21:8080/static/release/1.png)
+![Alt text](http://121.201.68.21:8080/static/release/2.png)
+![Alt text](http://121.201.68.21:8080/static/release/3.png)
+![Alt text](http://121.201.68.21:8080/static/release/4.png)
